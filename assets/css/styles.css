@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: black;  /* Set initial background color to black */
+    background-color: black;
     will-change: opacity;
     opacity: 0;
     animation: fadeOut 0.45s ease-out forwards;
@@ -55,15 +55,15 @@ body, html {
     justify-content: space-between;
     align-items: center;
     justify-content: center;
-    width: 90%; /* Adjust as needed */
-    margin: 0 auto; /* Centers the content horizontally */
+    width: 90%;
+    margin: 0 auto;
     height: 100%;
 }
 
 .title-content, .description-content {
-    flex: 1;                 /* Both children take equal space */
-    width: 50%;              /* Each child takes up half of the container's width */
-    box-sizing: border-box;  /* So padding and borders don't increase the width */
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box;
 }
 
 .hero2-content p {
@@ -77,15 +77,15 @@ body, html {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: gold; /* Choose your color */
+    background-color: gold;
     color: black;
     text-decoration: none;
-    border-radius: 5px; /* Optional, for rounded corners */
-    transition: background-color 0.3s ease; /* Optional, for hover effect */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .read-more-btn:hover {
-    background-color: #555; /* Choose your hover color */
+    background-color: #555;
 }
 
 .hero3-content {
@@ -99,7 +99,7 @@ body, html {
     text-align: center;
     width: 100%;
     height: 24%;
-    margin-bottom: 20px; /* Spacing between title and the images */
+    margin-bottom: 20px;
 }
 
 .images-container {
@@ -107,16 +107,16 @@ body, html {
     justify-content: space-between;
     margin-bottom: 2vw;
     height: 60%;
-    width: 100%;  /* Take the full width of its parent */
+    width: 100%;
 }
 
 .image-block {
     align-items: flex-end;
-    width: 30%;          /* Full width of the parent element */
-    padding-top: 34%;     /* 2:1 height to width ratio */
-    position: relative;   /* Relative positioning to place the overlay inside it */
-    background-size: cover; /* Covers the full width and height of the container */
-    background-position: center center; /* Center the image */
+    width: 30%;
+    padding-top: 34%;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
 }
 
 .text-container {
@@ -160,10 +160,10 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: black;
-    border-radius: 50%; /* This makes the div a circle */
-    width: 15vw;  /* Width of the circle */
-    height: 15vw; /* Height of the circle */
-    color: white; /* Text color */
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    color: white;
     transition: transform 0.3s ease;
     text-align: center;
 }
@@ -171,7 +171,7 @@ body, html {
 .circle h1 {
     font-size: 6.6em;
     color: gold;
-    margin-bottom: 5px; /* Adjust the space between the h1 and the p */
+    margin-bottom: 5px;
 }
 
 .circle p {
@@ -179,7 +179,7 @@ body, html {
 }
 
 .circle:hover {
-    transform: scale(1.5); /* scale(2) will double its size; translateY(20px) will move it 20 pixels down */
+    transform: scale(1.5);
 }
 
 .bio {
@@ -203,7 +203,7 @@ body, html {
     border-radius: 50%;
     width: 20vw;
     height: 20vw;
-    margin-bottom: 1em; /* Add some margin for spacing between circle and text */
+    margin-bottom: 1em;/
 }
 
 .image-container {
@@ -292,7 +292,6 @@ body, html {
     background-color: #555;
 }
 
-/* Contact Us Newsletter Signup */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -314,7 +313,6 @@ body, html {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Media Query for Contact Us Newsletter Signup on mobile */
 @media (max-width: 768px) {
     .input-group {
         flex-direction: column;
@@ -325,7 +323,6 @@ body, html {
     }
 }
 
-/* Media Query for Contact Us Section on mobile */
 @media (max-width: 768px) {
     .contact-content h1 {
         font-size: 2.2rem;
@@ -342,7 +339,7 @@ body, html {
 
 h1 {
     font-family: 'Helvetica', 'Arial', sans-serif;
-    font-size: 15vw;  /* Adjusted font size for better layout */
+    font-size: 15vw;
     color: #FFF; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -355,28 +352,28 @@ h2 {
 
 h3 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 6.5vw;  /* Adjusted font size for better layout */
+    font-size: 6.5vw;
     color: gold; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
-@media (max-width: 768px) {  /* 768px is a typical breakpoint for tablets, adjust as needed */
+@media (max-width: 768px) {
 
     .hero {
         align-items: center;
     }
     
     .hero2-content {
-        flex-direction: column;  /* Stack the children vertically */
+        flex-direction: column;
         text-align: center;
     }
 
     .title-content, .description-content {
         text-align: center;
-        flex: 1;                 /* Both children take equal space */
-        width: 100%;              /* Each child takes up half of the container's width */
-        box-sizing: border-box;  /* So padding and borders don't increase the width */
+        flex: 1;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .hero2-content p {
