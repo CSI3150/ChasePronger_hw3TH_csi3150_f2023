@@ -1,21 +1,47 @@
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: black;  /* Set initial background color to black */
+    will-change: opacity;
+    opacity: 0;
+    animation: fadeOut 0.45s ease-out forwards;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif; /* Choose your preferred font */
     height: 100%;
+    min-height: fit-content;
     overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
 .hero {
-    background-image: url('../images/mountain_background.png'); /* Adjust path to your hero image */
     background-size: cover;
     background-position: center;
-    height: 100vh; /* This ensures the hero section covers the entire viewport height */
-    width: 100vw; /* This ensures the hero section covers the entire viewport width */
+    height: 100vh; 
+    width: 100vw; 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Adjust color as needed */
+    color: rgb(255, 255, 255);
+    scroll-snap-align: start;
+    overflow: hidden;
 }
 
 .hero-content {
@@ -24,88 +50,344 @@ body, html {
     z-index: 10;
 }
 
-.hero-content p {
-    font-size: 6vw;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.hero2-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto; /* Centers the content horizontally */
+    height: 100%;
+}
+
+.title-content, .description-content {
+    flex: 1;                 /* Both children take equal space */
+    width: 50%;              /* Each child takes up half of the container's width */
+    box-sizing: border-box;  /* So padding and borders don't increase the width */
+}
+
+.hero2-content p {
+    color: white;
+    font-size: 3vh;
+}
+
+.read-more-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: gold; /* Choose your color */
+    color: black;
+    text-decoration: none;
+    border-radius: 5px; /* Optional, for rounded corners */
+    transition: background-color 0.3s ease; /* Optional, for hover effect */
+}
+
+.read-more-btn:hover {
+    background-color: #555; /* Choose your hover color */
+}
+
+.hero3-content {
+    width: 93%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.centered-title {
+    font-size: 4.5vw;
+    text-align: center;
+    width: 100%;
+    height: 24%;
+    margin-bottom: 20px; /* Spacing between title and the images */
+}
+
+.images-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+    height: 60%;
+    width: 100%;  /* Take the full width of its parent */
+}
+
+.image-block {
+    align-items: flex-end;
+    width: 30%;          /* Full width of the parent element */
+    padding-top: 34%;     /* 2:1 height to width ratio */
+    position: relative;   /* Relative positioning to place the overlay inside it */
+    background-size: cover; /* Covers the full width and height of the container */
+    background-position: center center; /* Center the image */
+}
+
+.text-container {
+    font-size: 2vw;
+    position: absolute;
+    bottom: 0;            
+    left: 0;              
+    width: 90%;          
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+}
+
+.carrot-btn {
+    font-size: 10vw;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    color: gold;
+    transition: color 0.3s ease;
+    margin-top: 5px; 
+}
+
+.carrot-btn:hover {
+    color: #555;
+}
+
+.hero4-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 50%; /* This makes the div a circle */
+    width: 15vw;  /* Width of the circle */
+    height: 15vw; /* Height of the circle */
+    color: white; /* Text color */
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.circle h1 {
+    font-size: 6.6em;
+    color: gold;
+    margin-bottom: 5px; /* Adjust the space between the h1 and the p */
+}
+
+.circle p {
+    font-size: 1.6em;
+}
+
+.circle:hover {
+    transform: scale(1.5); /* scale(2) will double its size; translateY(20px) will move it 20 pixels down */
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    height: 100%; 
+}
+
+.bio p {
+    font-size: 2vw;
+    width: 60%;
+}
+
+.circle2 {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+    margin-bottom: 1em; /* Add some margin for spacing between circle and text */
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.image-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.image-group img {
+    width: 25%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    object-fit: cover;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.image-group img:hover {
+    filter: grayscale(0%);
+}
+
+.contact-us {
+    background-image: linear-gradient(45deg, #111, black);
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+}
+
+.contact-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255,255,255,0.03) 25px, rgba(255,255,255,0.03) 50px);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content h1 {
+    font-size: 3.5rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    margin-top: 0;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 20px 0;
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.6);
+}
+
+.contact-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: #555;
+}
+
+/* Contact Us Newsletter Signup */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input-group input {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Media Query for Contact Us Newsletter Signup on mobile */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group input {
+        font-size: 0.8rem;
+    }
+}
+
+/* Media Query for Contact Us Section on mobile */
+@media (max-width: 768px) {
+    .contact-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-content p {
+        font-size: 1.1rem;
+    }
+
+    .contact-button {
+        padding: 10px 20px;
+    }
 }
 
 h1 {
-    font-size: 15vw; /* Adjust the value as per your design needs */
-    color: #FFF; /* Initial color, will be changed with blend mode */
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 15vw;  /* Adjusted font size for better layout */
+    color: #FFF; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
-    font-size: 10vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vw;
     color: #FFF;
 }
 
-.main-content {
-    padding: 50px;
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6.5vw;  /* Adjusted font size for better layout */
+    color: gold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-.experiences {
-    display: flex;
-    justify-content: space-between;
-}
+@media (max-width: 768px) {  /* 768px is a typical breakpoint for tablets, adjust as needed */
 
-.adventures {
-    padding: 50px 0;
-}
+    .hero {
+        align-items: center;
+    }
+    
+    .hero2-content {
+        flex-direction: column;  /* Stack the children vertically */
+        text-align: center;
+    }
 
-.stats {
-    display: flex;
-    justify-content: space-around;
-}
+    .title-content, .description-content {
+        text-align: center;
+        flex: 1;                 /* Both children take equal space */
+        width: 100%;              /* Each child takes up half of the container's width */
+        box-sizing: border-box;  /* So padding and borders don't increase the width */
+    }
 
-.testimonial {
-    background-color: #eee;
-    padding: 20px;
-}
+    .hero2-content p {
+        font-size: 2.5vh;
+    }
 
-.contact {
-    padding: 50px;
-    background-color: #222;
-    color: #FFF;
-}
+    .read-more-btn {
+        font-size: 2vh;
+    }
 
-.social-media {
-    display: flex;
-    justify-content: space-around;
-}
-
-#image-track-container {
-    overflow-x: hidden;
-    width: 100vw;
-    position: relative;
-}
-
-#image-track > .image {
-    width: 40vmin;
-    height: 56vmin;
-    object-fit: cover;
-    object-position: center;
-    user-select: none;
-    pointer-events: none;
-}
-
-#image-track {
-    display: flex;
-    gap: 4vmin;
-    white-space: nowrap;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: max-content;
-}
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image {
-    width: 40vmin;
-    height: 56vmin;
-    object-fit: cover;
+    h3 {
+        font-size: 5vh;
+    }
 }
